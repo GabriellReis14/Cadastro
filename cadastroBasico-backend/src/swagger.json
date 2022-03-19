@@ -1,0 +1,103 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+       "title": "API WA",
+       "description": "Essa api tem como objetivo realizar comunicação com o banco de dados Firebird.",
+       "contact": {
+          "email": "mcastilhodev@gmail.com"
+       },
+       "version": "1.0.0"
+    },
+    "servers": [
+       {
+          "url": "http://localhost:3000/",
+          "description": "API de teste"
+       },
+       {
+          "url": "http://47.254.28.255:3000/",
+          "description": "API Linux"
+       }
+    ],
+    "paths": {
+       "/login": {
+          "post": {
+             "summary": "Realização do login",
+             "description": "Essa rota será responsável pela realizaçaõ do login.Devolvendo o JWT como 'Authorization' no header da requsição." ,
+             "tags": ["Login"],
+             "requestBody": {
+                "content": {
+                   "application/json": {
+                      "schema": {
+                         "$ref": "#/components/schemas/Login"
+                      },
+                      "examples": {
+                         "Login usando E-mail": {
+                            "value": {
+                               "canal": "email",
+                               "valor": "sharkdev@dev.com",
+                               "senha": "12345abc"
+                            }
+                         },
+                         "Login usando Telegram": {
+                            "value": {
+                               "canal": "telegram",
+                               "valor": 7564564512,
+                               "senha": "12345abc"
+                            }
+                         },
+                         "Login usando WhatsApp": {
+                            "value": {
+                               "canal": "whatsapp",
+                               "valor": "35999998888",
+                               "senha": "12345abc"
+                            }
+                         }
+ 
+                      }
+                   }
+                }
+             },
+             "responses": {
+                "400": {
+                   "description": "Falha no login"
+                },
+                "200": {
+                   "description": "Login realizado com sucesso",
+                   "content": {
+                      "application/json": {
+                         "schema": {
+                            "type": "object",
+                            "value": {
+                               "id": "string",
+                               "nome": "Matheus",
+                               "email": "matheuscnvga@gmail.com",
+                               "success": true
+                            }
+                         }
+                      }
+                   }
+                }
+             }
+          }
+       }
+    },
+    "components": {
+       "schemas": {
+          "Login": {
+             "type": "object",
+             "properties": {
+                "canal": {
+                   "type": "string"
+                },
+                "valor": {
+                   "type": "string"
+                },
+                "senha": {
+                   "type": "string"
+                }
+             }
+          }
+       }
+    }
+ }
+ 
