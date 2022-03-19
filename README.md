@@ -7,5 +7,5 @@ Um projeto simples de cadastro de Pessoa utilizando a biblioteca PrimeReact, com
 - Instale a última versão LTS do Node.JS;
 - Instale as dependências do projeto utilizando npm ou yarn;
 - Instale o PostgreSQL, e restaure o backup "database pessoa postegresql.backup";
-- Coloque as informações do banco de dados PostgreSQL no arquivo .env (possui o .env.example para seguir);
+- Coloque as informações do banco de dados PostgreSQL no arquivo .env (possui o .env.example para seguir) e também a Chave JWT (pode ser a sua escolha, somente pra gerar o token de autorização);
 - Inicie o projeto backend e frontend.
