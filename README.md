@@ -18,7 +18,7 @@ Esse projeto foi desenvolvido com o propósito de praticar os conceitos de:
 
 - Node.js
 - Express
-- SQL Server (ou o banco que você utilizou na época)
+- PostgreSQL
 - Nodemon
 
 ---
